@@ -110,37 +110,37 @@ This log describes the state of an art gallery. It is created and updated throug
 ### Input ###
 
 ```
-./logappend -T 1 -K secret -A -E Fred log1  
-./logappend -T 2 -K secret -A -G Charlotte log1  
-./logappend -T 3 -K secret -A -E Fred -R 1 log1   
-./logappend -T 4 -K secret -A -G Charlotte -R 1 log1  
-./logread -K secret -S log1  
-./logappend -T 5 -K secret -L -E Fred -R 1 log1  
-./logappend -T 6 -K secret -A -E Fred -R 2 log1  
-./logappend -T 7 -K secret -L -E Fred -R 2 log1  
-./logappend -T 8 -K secret -A -E Fred -R 3 log1  
-./logappend -T 9 -K secret -L -E Fred -R 3 log1  
-./logappend -T 10 -K secret -A -E Fred -R 1 log1  
-./logread -K secret -R -E Fred log1
+./logappend -T 1 -K key1 -A -E Fred log1  
+./logappend -T 2 -K key1 -A -G Charlotte log1  
+./logappend -T 3 -K key1 -A -E Fred -R 1 log1   
+./logappend -T 4 -K key1 -A -G Charlotte -R 1 log1  
+./logread -K key1 -S log1  
+./logappend -T 5 -K key1 -L -E Fred -R 1 log1  
+./logappend -T 6 -K key1 -A -E Fred -R 2 log1  
+./logappend -T 7 -K key1 -L -E Fred -R 2 log1  
+./logappend -T 8 -K key1 -A -E Fred -R 3 log1  
+./logappend -T 9 -K key1 -L -E Fred -R 3 log1  
+./logappend -T 10 -K key1 -A -E Fred -R 1 log1  
+./logread -K key1 -R -E Fred log1
 cat log1
 ```
 
 ### Output ###
 
-`./logread -K secret -S log1`:
+`./logread -K key1 -S log1`:
 
 Fred  
 Charlotte  
 1: Fred,Charlotte
 
-`./logread -K secret -R -E Fred log1`:
+`./logread -K key1 -R -E Fred log1`:
 
 1,2,3,1
 
 `cat log1`
 
 Art Gallery Log  
-Key: secret 
+Key: key1 
  
 Time: 1 &nbsp;&nbsp;Employee: Fred &nbsp;&nbsp;Action: Arrive  
 Time: 2 &nbsp;&nbsp;Guest: Charlotte &nbsp;&nbsp;Action: Arrive  
